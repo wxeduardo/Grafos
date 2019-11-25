@@ -1,0 +1,2 @@
+INDEX VERSION 1.130+C:\Users\Eduardo\Desktop\Projetos_e_Programção_2K19\teoria dos grafos\trabalho\.metadata\.plugins\org.eclipse.jdt.core
+2712580754.index

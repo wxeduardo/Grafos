@@ -1,0 +1,15 @@
+package topologia;
+
+public class AlgoritmoTopologia {
+
+    public static void main(String[] args) {
+
+        int i = 0;
+
+        Grafo grafo = new Grafo();
+        Topologica topologica = new Topologica(grafo);
+
+        topologica.Remover();
+    }
+
+}

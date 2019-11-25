@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Grafo_articulação {
+    public static int tamanho = 5;
+    public static vertice[] verticesDoGrafo = new vertice[tamanho];
+    public static void inicialização(){
+        Scanner sc1 = new Scanner(System.in);
+        for(int i=0;i<tamanho;i++){
+            verticesDoGrafo[i] = new vertice();
+            System.out.println("Vertice - "+i+"\n");            
+            System.out.println("qual quantidade de arestas do vertice?\n");
+            int QuantidadeArestas = sc1.nextInt();
+            for(int j=0;j<QuantidadeArestas;j++){
+                Aresta aresta = new Aresta();
+                aresta.setV1(i);
+                System.out.println("qual o vertice que essa aresta liga?\n");
+                aresta.setV2(sc1.nextInt());
+            }
+            
+        }
+    }
+    public static void main(String[] args) {
+        inicialização();
+        BuscaEmprofundiade busca = new BuscaEmprofundiade(verticesDoGrafo, tamanho);
+        busca.buscaEmProfundidadeNoGrafo();
+        busca.articulacoes();
+    }
+    /*public vertice[] buscaProArticulação(){
+        for(int i=0;i<this.verticesDoGrafo.length;i++){
+            if(this.verticesDoGrafo[i].getTipo() == 'R'){
+                if(buscaAdjacentes(this.verticesDoGrafo[i].getArastas()).size()>1){
+                    this.verticesDoGrafo[i].setTipo('A');
+                }
+            }else if(this.verticesDoGrafo[i].getTipo() == 'I'){
+                
+                buscaProvertice(i, buscaAdjacentes(this.verticesDoGrafo[0].getArastas()));
+            }
+        }
+        return null;
+    }
+    
+    public boolean buscaProvertice(int posiçãoAtual,ArrayList<Integer> lista){
+        
+
+        
+        if(this.verticesDoGrafo[posiçãoAtual].getTipo() == 'F'){
+            return false;
+        }
+        
+        for(int i=0;i<this.verticesDoGrafo[posiçãoAtual].getArastas().size();i++){
+            if(this.verticesDoGrafo[posiçãoAtual].getArastas().get(i).getPercorridoNaBusca() == true ){
+                    for(int j=0;j<lista.size();j++){
+                        if(lista.get(j) == this.verticesDoGrafo[posiçãoAtual].getArastas().get(i).getV2()){
+                            return true;
+                    }
+                }
+                if(buscaProvertice(this.verticesDoGrafo[posiçãoAtual].getArastas().get(i).getV2(), lista)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }*/
+}
